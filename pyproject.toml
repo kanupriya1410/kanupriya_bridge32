@@ -1,0 +1,30 @@
+[tool.ruff]
+target-version = "py311"
+line-length     = 100
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "B",
+    "C4",
+    "UP",
+    "S",
+    "T20",
+]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S"]
+"check_standards.py" = ["T201", "S602", "S603"]
+
+[tool.mypy]
+python_version          = "3.11"
+strict                  = true
+warn_return_any         = true
+warn_unused_ignores     = true
+disallow_untyped_defs   = true
+disallow_any_generics   = true
+no_implicit_reexport    = true
